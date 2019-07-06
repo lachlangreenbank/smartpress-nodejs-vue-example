@@ -55,7 +55,7 @@ app.post('/send', async function (req, res) {
 
 app.post('/getBalance', async function (req, res) {
 	if (typeof req.body.data.user_id == 'string') {
-		let data = await smartpress.getBalance({user_id: req.body.data.user_id})
+		let data = await smartpress.getBalance({user_id: req.body.data.user_id, contract_balance: false})
 		res.send({success: true, data: data})
 	} else {
 		res.send({success: false, data: {message:"Missing string user_id"}})
