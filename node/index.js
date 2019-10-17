@@ -38,12 +38,16 @@ app.post('/send', async function (req, res) {
 		
 		let sender = req.body.data.sender,
 		receiver = req.body.data.receiver,
-		amount = req.body.data.amount
+		amount = req.body.data.amount,
+		memo = req.body.data.memo
 
 		let tx = {
-			sender: sender, receiver: receiver,
-			assetType: 'token', symbol: 'AAA',
-			amount: amount, memo: 'Test transfer'
+			sender: sender,
+			receiver: receiver,
+			assetType: 'token',
+			symbol: 'AAA',
+			amount: amount,
+			memo: memo
 		}
 		let data = await smartpress.sendAsset(tx)
 		res.send({success: true, data: data})
