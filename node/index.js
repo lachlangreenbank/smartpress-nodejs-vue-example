@@ -34,7 +34,7 @@ app.post('/createAccount', async function (req, res) {
 
 app.post('/send', async function (req, res) {
 	console.log(req.body)
-	if (typeof req.body.data.sender == 'string' && typeof req.body.data.receiver == 'string' && typeof req.body.data.amount) {
+	if (typeof req.body.data.sender == 'string' && typeof req.body.data.receiver == 'string' && typeof req.body.data.amount && typeof req.body.data.memo == 'string') {
 		
 		let sender = req.body.data.sender,
 		receiver = req.body.data.receiver,
