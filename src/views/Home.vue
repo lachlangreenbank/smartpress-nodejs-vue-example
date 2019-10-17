@@ -14,6 +14,7 @@
       <input style="margin:10px;" placeholder="sender" v-model="sender" />
       <input style="margin:10px;" placeholder="receiver" v-model="receiver" />
       <input style="margin:10px;" placeholder="amount" type="number" v-model="amount" />
+      <input style="margin:10px;" placeholder="memo" v-model="memo" />
       <button @click="sendAsset()">Send</button> <br/><br/>
       <span v-if="send.data" :key="send.data.data.user_id">Send: {{send.data.data}}</span><br/><br/><br/>
 
@@ -36,6 +37,7 @@
 	    return {
 	    	sender: '',
 	    	receiver: '',
+	    	memo: '',
 	    	amount: '',
 	    	balance_user_id: '',
 	    	create_user_id: ''
@@ -47,7 +49,8 @@
 	  		this.$store.dispatch('send', {
 	  			sender: this.sender,
 	  			receiver: this.receiver,
-	  			amount: this.amount
+	  			amount: this.amount,
+	  			memo: this.memo
 	  		})
 	  	},
 	  	accountBalance: function () {
