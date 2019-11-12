@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
 
-const BASE_URL = 'http://localhost:3000'
+const BASE_URL = 'http://localhost:3001'
 
 Vue.use(Vuex)
 
